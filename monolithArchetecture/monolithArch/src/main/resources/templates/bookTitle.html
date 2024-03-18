@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Номнуудын гарчиг</title>
+</head>
+<body>
+<h1 th:text="'Бүх номнуудын жагсаалт!!!'" >Номнуудын гарчгийн жагсаалт </h1>
+
+<table>
+    <tr>
+        <th style="color:green">Гарчиг</th>
+        <th>Үнэ</th>
+       
+    </tr>
+    <tr th:each="title : ${titles}">
+        <td th:text="${title.getTitle()}">Title</td>
+        </tr>
+
+</table>
+
+</body>
+</html>

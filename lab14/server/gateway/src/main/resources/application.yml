@@ -1,0 +1,21 @@
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8763/eureka/
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: bookModule
+          uri: http://localhost:8081/v1/book/
+          predicates: 
+            - Path=/v1/book/**π
